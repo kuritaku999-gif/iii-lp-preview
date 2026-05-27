@@ -9,7 +9,7 @@
   --ink:    #1a1916;   /* 墨                  */
   --accent: #6b6357;   /* くすみグレージュ    */
   --line:   #cfc7b8;
-  --maxw:   1200px;
+  --maxw:   1320px;
 }
 
 * { box-sizing: border-box; }
@@ -90,7 +90,7 @@ a   { color: inherit; }
    Stage  (モックアップ画像 + 透明ホットスポット)
    --------------------------------------------------------------------- */
 .stage { position: relative; width: 100%; max-width: var(--maxw); margin: 0 auto; }
-.stage--portrait { max-width: 920px; }
+.stage--portrait { max-width: 1180px; }
 .stage > img { width: 100%; height: auto; }
 
 /* transparent clickable hotspot — % 指定なので画像と一緒に伸縮する */

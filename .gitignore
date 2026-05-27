@@ -1,0 +1,6 @@
+# large model weights / build script / temp renders
+*.pth
+coded/upscale.py
+coded/_*.png
+coded/_*.jpg
+coded/assets/cut/_*.jpg
