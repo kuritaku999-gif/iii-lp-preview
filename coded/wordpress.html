@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordPress 埋め込み用コード ｜ iii LP</title>
+<style>
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background:#efe9df;color:#181712;line-height:1.7;max-width:860px;margin:0 auto;padding:2rem 1.2rem 4rem}
+  h1{font-size:1.4rem;font-weight:700;letter-spacing:.04em}
+  h2{font-size:1.05rem;margin-top:2rem;border-bottom:1px solid #cfc7b8;padding-bottom:.4rem}
+  ol{padding-left:1.3rem}li{margin:.3rem 0}
+  code{background:#e2dccd;padding:.1rem .35rem;border-radius:3px;font-size:.9em}
+  textarea{width:100%;height:200px;font-family:Consolas,monospace;font-size:.82rem;padding:.8rem;border:1px solid #cfc7b8;border-radius:6px;background:#fff;color:#222;resize:vertical}
+  .btn{display:inline-block;margin-top:.6rem;background:#181712;color:#efe9df;border:0;padding:.6rem 1.2rem;font-size:.85rem;letter-spacing:.08em;cursor:pointer;border-radius:4px}
+  .note{font-size:.86rem;color:#6b6357}
+  table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:.5rem}
+  td,th{border:1px solid #cfc7b8;padding:.4rem .6rem;text-align:left}
+</style>
+</head>
+<body>
+<h1>WordPress 埋め込み用コード</h1>
+<p class="note">テーマのCSSと衝突しない「自動リサイズiframe方式」です。投稿/固定ページの <strong>「カスタムHTML」ブロック</strong>（またはクラシックエディタのテキストモード）に下記を貼るだけで反映されます。スマホ対応・高さ自動調整。</p>
+
+<h2>① 貼り付けコード（フルLP）</h2>
+<textarea id="snip" readonly>&lt;!-- iii Project Universe LP --&gt;
+&lt;iframe id="iiiLp" src="https://kuritaku999-gif.github.io/iii-lp-preview/coded/full-new.html"
+        title="YUMA MURANUSHI PROJECT UNIVERSE" scrolling="no" loading="lazy"
+        style="width:100%;max-width:100%;border:0;display:block;height:3200px"&gt;&lt;/iframe&gt;
+&lt;script&gt;
+window.addEventListener('message',function(e){
+  if(e&amp;&amp;e.data&amp;&amp;e.data.iiiLpHeight){
+    var f=document.getElementById('iiiLp'); if(f){f.style.height=e.data.iiiLpHeight+'px';}
+  }
+});
+&lt;/script&gt;</textarea>
+<button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('snip').value);this.textContent='コピーしました ✓'">コードをコピー</button>
+
+<h2>② 手順</h2>
+<ol>
+  <li>WordPress 管理画面 → 固定ページ（または投稿）を新規作成</li>
+  <li>テンプレートは「全幅／フルワイド」系がおすすめ（左右余白なしで綺麗に出ます）</li>
+  <li>「+」ブロック追加 →「カスタムHTML」を選択</li>
+  <li>上のコードを貼り付けて「公開」</li>
+</ol>
+<p class="note">高さは読み込み後に自動調整されます（最初の <code>height:3200px</code> は表示前の仮値）。</p>
+
+<h2>③ 他のデザインに差し替える場合</h2>
+<p class="note">コード内の <code>src="..."</code> を下記URLに変えるだけです。</p>
+<table>
+  <tr><th>デザイン</th><th>src のURL</th></tr>
+  <tr><td>フルLP</td><td>https://kuritaku999-gif.github.io/iii-lp-preview/coded/full-new.html</td></tr>
+  <tr><td>ヒーロー</td><td>https://kuritaku999-gif.github.io/iii-lp-preview/coded/IMG_3396.html</td></tr>
+  <tr><td>キービジュアル</td><td>https://kuritaku999-gif.github.io/iii-lp-preview/coded/IMG_3397.html</td></tr>
+</table>
+
+<h2>補足</h2>
+<p class="note">画像は GitHub Pages 上のものを参照しています。画像も含めて完全に自社サーバーに載せたい場合は、<code>coded</code> フォルダ一式をFTPでアップロードし、上記URLを自社ドメインに置き換えれば同様に動作します（その場合は別途ご相談ください）。</p>
+</body>
+</html>

@@ -248,6 +248,10 @@
   if(t)t.addEventListener('click',function(){m.classList.add('open')});
   if(c)c.addEventListener('click',function(){m.classList.remove('open')});
   if(m)m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open')});
+  // WordPress 埋め込み用：親フレームへ高さを通知（自動リサイズ）
+  function postH(){ if(window.parent!==window){ try{ parent.postMessage({iiiLpHeight:document.documentElement.scrollHeight},'*'); }catch(e){} } }
+  window.addEventListener('load',postH); window.addEventListener('resize',postH);
+  [300,900,1800].forEach(function(d){setTimeout(postH,d)});
 })();
 </script>
 </body>
