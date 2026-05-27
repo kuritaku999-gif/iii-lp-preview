@@ -90,7 +90,7 @@ a   { color: inherit; }
    Stage  (モックアップ画像 + 透明ホットスポット)
    --------------------------------------------------------------------- */
 .stage { position: relative; width: 100%; max-width: var(--maxw); margin: 0 auto; }
-.stage--portrait { max-width: 760px; }
+.stage--portrait { max-width: 920px; }
 .stage > img { width: 100%; height: auto; }
 
 /* transparent clickable hotspot — % 指定なので画像と一緒に伸縮する */

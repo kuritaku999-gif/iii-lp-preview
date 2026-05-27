@@ -29,4 +29,14 @@
       });
     }
   });
+
+  // ---- WordPress 埋め込み用：親フレームへ高さを通知（自動リサイズ） ----
+  function postH() {
+    if (window.parent !== window) {
+      try { parent.postMessage({ iiiLpHeight: document.documentElement.scrollHeight }, '*'); } catch (e) {}
+    }
+  }
+  window.addEventListener('load', postH);
+  window.addEventListener('resize', postH);
+  [300, 900, 1800].forEach(function (d) { setTimeout(postH, d); });
 })();

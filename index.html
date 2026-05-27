@@ -3,79 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YUMA MURANUSHI PROJECT UNIVERSE — HTML index</title>
-<link rel="stylesheet" href="css/style.css">
+<title>YUMA MURANUSHI PROJECT UNIVERSE — Preview</title>
+<meta name="description" content="Z = D + iD ｜ デザインプレビュー（3パターン・スマホ対応）">
 <style>
-  .lead{max-width:var(--maxw);margin:0 auto;padding:3rem 1.25rem 1rem}
-  .lead h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:400;letter-spacing:.04em;margin:0 0 .5rem}
+  :root{--paper:#efe9df;--paper2:#e7e0d2;--ink:#181712;--accent:#6b6357;--line:#cfc7b8;--max:1080px}
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{font-family:"Times New Roman","Noto Serif JP","Yu Mincho",serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+  .top{display:flex;align-items:baseline;gap:.6rem;padding:1rem clamp(1rem,4vw,2.5rem);border-bottom:1px solid var(--line)}
+  .top .mark{font-size:1.4rem;font-weight:700;letter-spacing:.13em}.top .sub{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+  .lead{max-width:var(--max);margin:0 auto;padding:2.6rem clamp(1rem,4vw,2.5rem) 1rem}
+  .lead h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:400;letter-spacing:.03em;margin:0 0 .4rem}
   .lead p{color:var(--accent);margin:0}
-  .group{max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.25rem .5rem}
-  .group h2{font-size:1.1rem;font-weight:400;letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:.5rem}
-  .group h2 small{color:var(--accent);font-size:.7rem;letter-spacing:.14em;margin-left:.6rem}
-  .cards2{max-width:var(--maxw);margin:0 auto;padding:.5rem 1.25rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-  .card{border:1px solid var(--line);background:#fff;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-  .card:hover{box-shadow:0 8px 30px rgba(0,0,0,.12);transform:translateY(-3px)}
-  .card img{width:100%;height:190px;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
-  .card .body{padding:1rem 1.2rem 1.3rem}
-  .card .body .no{font-size:.64rem;letter-spacing:.24em;color:var(--accent);text-transform:uppercase}
-  .card .body h3{margin:.3rem 0;font-size:1.1rem;font-weight:400}
-  .card .body span.d{font-size:.78rem;color:var(--accent)}
-  .tag{display:inline-block;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);padding:.2rem .5rem;color:var(--accent);margin-bottom:.5rem}
+  .cards{max-width:var(--max);margin:0 auto;padding:1.5rem clamp(1rem,4vw,2.5rem) 4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem}
+  .card{border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:0 10px 34px rgba(0,0,0,.13);transform:translateY(-3px)}
+  .card .thumb{height:210px;background:var(--paper2) center top/cover no-repeat;border-bottom:1px solid var(--line)}
+  .card .body{padding:1.1rem 1.3rem 1.4rem}
+  .card .no{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+  .card h3{margin:.3rem 0 .35rem;font-size:1.2rem;font-weight:400}
+  .card .d{font-size:.82rem;color:var(--accent)}
+  .card .go{display:inline-block;margin-top:.9rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:2px}
+  footer{border-top:1px solid var(--line);padding:1.6rem;text-align:center;font-size:.64rem;color:var(--accent);letter-spacing:.08em}
 </style>
 </head>
 <body>
-
-<header class="topbar">
-  <a class="brand" href="https://iii-iii.com/"><span class="mark">iii</span><span class="sub">Yuma Muranushi · Project Universe</span></a>
-  <nav class="inline">
-    <a href="https://iii-iii.com/">Live Site</a>
-  </nav>
-</header>
-
+<div class="top"><span class="mark">iii</span><span class="sub">Yuma Muranushi · Project Universe</span></div>
 <div class="lead">
   <h1>Z = D + iD</h1>
-  <p>3枚のデザインモックアップを HTML 化したインデックス。2つの方式を用意しています。</p>
+  <p>デザインプレビュー — 3パターン（スマホ対応）。各カードからご覧ください。</p>
 </div>
-
-<!-- ===== Coded rebuild ===== -->
-<div class="group"><h2>完全コード再構築版 <small>HTML/CSS で組み直し・実テキスト・実素材切り出し</small></h2></div>
-<div class="cards2">
-  <a class="card" href="coded/IMG_3396.html">
-    <img src="images/IMG_3396.JPG" alt="Hero">
-    <div class="body"><span class="tag">Coded</span><span class="no">IMG_3396</span><h3>Hero — Desktop</h3><span class="d">タイトル・ナビ・6カードを実コード化</span></div>
+<div class="cards">
+  <a class="card" href="IMG_3395.html">
+    <span class="thumb" style="background-image:url('images/IMG_3395.JPG')"></span>
+    <div class="body"><span class="no">01 ｜ Full LP</span><h3>フルページ</h3><span class="d">全セクション（理論・実装・平和構想・組織・接続）</span><span class="go">View →</span></div>
   </a>
-  <a class="card" href="coded/IMG_3397.html">
-    <img src="images/IMG_3397.JPG" alt="Key Visual">
-    <div class="body"><span class="tag">Coded</span><span class="no">IMG_3397</span><h3>Key Visual</h3><span class="d">ポスター風フルブリード</span></div>
-  </a>
-  <a class="card" href="coded/IMG_3395.html">
-    <img src="images/IMG_3395.JPG" alt="Full Page">
-    <div class="body"><span class="tag">Coded</span><span class="no">IMG_3395</span><h3>Full Page</h3><span class="d">全セクション（Theory〜Social）コード化</span></div>
-  </a>
-</div>
-
-<!-- ===== Hybrid ===== -->
-<div class="group"><h2>ハイブリッド版 <small>モックアップ画像＋透明リンク（ホットスポット）</small></h2></div>
-<div class="cards2">
   <a class="card" href="IMG_3396.html">
-    <img src="images/IMG_3396.JPG" alt="Hero">
-    <div class="body"><span class="tag">Hybrid</span><span class="no">IMG_3396</span><h3>Hero — Desktop</h3><span class="d">画像にリンク領域を重ね</span></div>
+    <span class="thumb" style="background-image:url('images/IMG_3396.JPG')"></span>
+    <div class="body"><span class="no">02 ｜ Hero</span><h3>ヒーロー</h3><span class="d">トップビジュアル単体パターン</span><span class="go">View →</span></div>
   </a>
   <a class="card" href="IMG_3397.html">
-    <img src="images/IMG_3397.JPG" alt="Key Visual">
-    <div class="body"><span class="tag">Hybrid</span><span class="no">IMG_3397</span><h3>Key Visual</h3><span class="d">画像にリンク領域を重ね</span></div>
-  </a>
-  <a class="card" href="IMG_3395.html">
-    <img src="images/IMG_3395.JPG" alt="Full Page">
-    <div class="body"><span class="tag">Hybrid</span><span class="no">IMG_3395</span><h3>Full Page</h3><span class="d">画像にリンク領域を重ね</span></div>
+    <span class="thumb" style="background-image:url('images/IMG_3397.JPG')"></span>
+    <div class="body"><span class="no">03 ｜ Key Visual</span><h3>キービジュアル</h3><span class="d">ポスター風フルブリード</span><span class="go">View →</span></div>
   </a>
 </div>
-
-<footer class="site-footer">
-  <div class="mark">iii</div>
-  <div class="sub">Yuma Muranushi · Project Universe</div>
-  <p class="copy">© 2025 Yuma Muranushi. All Rights Reserved.</p>
-</footer>
-
+<footer>© 2025 Yuma Muranushi · Project Universe</footer>
 </body>
 </html>
