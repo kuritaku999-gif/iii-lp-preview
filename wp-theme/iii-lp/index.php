@@ -72,9 +72,9 @@
     <!-- HERO -->
     <section class="hero">
       <picture>
-        <source media="(max-width:600px)"  srcset="<?php echo $img; ?>/mv-sp.png">
-        <source media="(max-width:1023px)" srcset="<?php echo $img; ?>/mv-tablet.png">
-        <img src="<?php echo $img; ?>/mv-pc.png" alt="Z = D + iD — YUMA MURANUSHI PROJECT UNIVERSE">
+        <source media="(max-width:600px)"  srcset="<?php echo $img; ?>/mv-sp.jpg">
+        <source media="(max-width:1023px)" srcset="<?php echo $img; ?>/mv-tablet.jpg">
+        <img src="<?php echo $img; ?>/mv-pc.jpg" alt="Z = D + iD — YUMA MURANUSHI PROJECT UNIVERSE">
       </picture>
       <a class="enter-btn" data-link="enter" href="#">
         <img src="<?php echo $img; ?>/enter-universe.png" alt="ENTER THE UNIVERSE">
@@ -82,19 +82,19 @@
 
       <!-- ヒーロー下部の6カラム -->
       <nav class="hero-nav" aria-label="セクションナビ">
-        <a data-link="nav_common"   href="#"><img src="<?php echo $img; ?>/nav-01-common.png" alt=""><span class="hn-label"><b>01</b>COMMON<small>人間・メディア</small></span></a>
-        <a data-link="nav_theory"   href="#"><img src="<?php echo $img; ?>/nav-02-theory.png" alt=""><span class="hn-label"><b>02</b>THEORY<small>理論研究</small></span></a>
-        <a data-link="nav_praxis"   href="#"><img src="<?php echo $img; ?>/nav-03-praxis.png" alt=""><span class="hn-label"><b>03</b>PRAXIS<small>実装・訓練</small></span></a>
-        <a data-link="nav_ipeace"   href="#"><img src="<?php echo $img; ?>/nav-04-ipeace.png" alt=""><span class="hn-label"><b>04</b>i.PEACE<small>平和構想</small></span></a>
-        <a data-link="nav_projecti" href="#"><img src="<?php echo $img; ?>/nav-05-projecti.png" alt=""><span class="hn-label"><b>05</b>PROJECT i<small>組織構造</small></span></a>
-        <a data-link="nav_social"   href="#"><img src="<?php echo $img; ?>/nav-06-social.png" alt=""><span class="hn-label"><b>06</b>SOCIAL<small>結線</small></span></a>
+        <a data-link="nav_common"   href="#"><img src="<?php echo $img; ?>/nav-01-common.jpg" alt=""><span class="hn-label"><b>01</b>COMMON<small>人間・メディア</small></span></a>
+        <a data-link="nav_theory"   href="#"><img src="<?php echo $img; ?>/nav-02-theory.jpg" alt=""><span class="hn-label"><b>02</b>THEORY<small>理論研究</small></span></a>
+        <a data-link="nav_praxis"   href="#"><img src="<?php echo $img; ?>/nav-03-praxis.jpg" alt=""><span class="hn-label"><b>03</b>PRAXIS<small>実装・訓練</small></span></a>
+        <a data-link="nav_ipeace"   href="#"><img src="<?php echo $img; ?>/nav-04-ipeace.jpg" alt=""><span class="hn-label"><b>04</b>i.PEACE<small>平和構想</small></span></a>
+        <a data-link="nav_projecti" href="#"><img src="<?php echo $img; ?>/nav-05-projecti.jpg" alt=""><span class="hn-label"><b>05</b>PROJECT i<small>組織構造</small></span></a>
+        <a data-link="nav_social"   href="#"><img src="<?php echo $img; ?>/nav-06-social.jpg" alt=""><span class="hn-label"><b>06</b>SOCIAL<small>結線</small></span></a>
       </nav>
     </section>
 
     <!-- ===== 中間セクション THEORY / PRAXIS ===== -->
     <section class="mid">
       <a class="mid-band" data-link="mid_theory" href="#">
-        <img src="<?php echo $img; ?>/mid-theory.png" alt="">
+        <img src="<?php echo $img; ?>/mid-theory.jpg" alt="">
         <div class="mid-text">
           <h3><?php iii_t('mid_theory_h'); ?></h3>
           <p class="mid-sub"><?php iii_t('mid_theory_sub'); ?></p>
@@ -103,7 +103,7 @@
         </div>
       </a>
       <a class="mid-band" data-link="mid_praxis" href="#">
-        <img src="<?php echo $img; ?>/mid-praxis.png" alt="">
+        <img src="<?php echo $img; ?>/mid-praxis.jpg" alt="">
         <div class="mid-text">
           <h3><?php iii_t('mid_praxis_h'); ?></h3>
           <p class="mid-sub"><?php iii_t('mid_praxis_sub'); ?></p>
@@ -176,7 +176,7 @@
 
       <!-- i.PEACE（黒帯） -->
       <a class="band band-dark" data-link="band_ipeace" href="#">
-        <img src="<?php echo $img; ?>/band-ipeace-clean.png" alt="">
+        <img src="<?php echo $img; ?>/band-ipeace-clean.jpg" alt="">
         <div class="band-text band-left">
           <h3><?php iii_t('band_ipeace_h'); ?></h3><p class="band-sub"><?php iii_t('band_ipeace_sub'); ?></p>
           <p class="band-body"><?php iii_t('band_ipeace_body'); ?></p>
@@ -193,7 +193,7 @@
 
         <!-- PROJECT i（クリーム）＝左 -->
         <a class="band band-cell band-light" data-link="band_projecti" href="#" style="flex:2.84 1 0">
-          <img src="<?php echo $img; ?>/band-projecti-clean.png" alt="">
+          <img src="<?php echo $img; ?>/band-projecti-clean.jpg" alt="">
           <div class="band-text band-left">
             <h3><?php iii_t('band_projecti_h'); ?></h3><p class="band-sub"><?php iii_t('band_projecti_sub'); ?></p>
             <p class="band-body"><?php iii_t('band_projecti_body'); ?></p>
@@ -203,12 +203,12 @@
 
         <!-- 大きい ï（装飾・文字なし／細い）＝真ん中 -->
         <a class="band band-cell" data-link="band_bigi" href="#" style="flex:1.785 1 0">
-          <img src="<?php echo $img; ?>/band-bigi.png" alt="PROJECT i">
+          <img src="<?php echo $img; ?>/band-bigi.jpg" alt="PROJECT i">
         </a>
 
         <!-- SOCIAL（クリーム）＝右 -->
         <a class="band band-cell band-light" data-link="band_social" href="#" style="flex:2.84 1 0">
-          <img src="<?php echo $img; ?>/band-social-clean.png" alt="">
+          <img src="<?php echo $img; ?>/band-social-clean.jpg" alt="">
           <div class="band-text band-topleft">
             <h3><?php iii_t('band_social_h'); ?></h3><p class="band-sub"><?php iii_t('band_social_sub'); ?></p>
             <p class="band-body"><?php iii_t('band_social_body'); ?></p>
