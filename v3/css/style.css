@@ -251,13 +251,15 @@ img{max-width:100%;display:block}
   .band-list{padding:0 18px 16px;text-align:left}
   .band-dark{padding-bottom:2px}
   .band-light .band-text{border-top:1px solid var(--line)}
-  /* 横並び3枚はモバイルで縦積みに戻す */
-  .band-row{flex-direction:column;gap:18px}
-  .band-cell{flex:none!important}
+  /* 横並び3枚はモバイルで縦積みに戻す（固定高さを解除しないとフッターに被る） */
+  .band-row{flex-direction:column;gap:18px;height:auto}
+  .band-cell{flex:none!important;height:auto}
+  .band-cell>img{height:auto;object-fit:contain}
   .band-row .band-text{max-width:100%}
   :root{--header-h:56px}
   .card-grid{grid-template-columns:repeat(2,1fr)}
   .card{border-right:1px solid var(--line)}
+  .card:nth-child(odd){border-right:1px solid var(--line)}  /* タブレット用nth-child(3)の打ち消し＝中央の仕切りを復活 */
   .card:nth-child(2n){border-right:0}
   .card:nth-child(-n+4){border-bottom:1px solid var(--line)}
   .card-icon{height:96px}
