@@ -1,63 +1,9 @@
 /* ===================================================================
-   iii-iii.com LP v3
-   ▼▼▼ リンク先はこの { } の中だけ書き換えればOK ▼▼▼
-   ・URLを変えたいときは "" の中を書き換えるだけ
-   ・"" (空) のままにしておくと、そのリンクは無効（押しても動かない）
+   iii-iii.com LP（WordPressテーマ版）
+   リンク先は WordPress「外観 → カスタマイズ → iii LP 設定」で編集します。
+   （functions.php が var LINKS を自動で出力します）
    =================================================================== */
-var LINKS = {
-  /* --- ヘッダー / モバイルメニュー --- */
-  header_project: "https://iii-iii.com/project/",
-  header_theory:  "https://iii-iii.com/i-theory/",
-  header_about:   "https://yuma-muranushi.jp/",
-  header_news:    "https://iii-iii.com/i.media/",
-  header_contact: "https://line.me/R/ti/p/@082qgqqf",
-
-  /* --- サイドバー / ユニバース 01〜06 --- */
-  nav_common:   "https://iii-iii.com/i.media/",
-  nav_theory:   "https://iii-iii.com/i-theory/",
-  nav_praxis:   "https://iii-iii.com/grid/",
-  nav_ipeace:   "https://iii-iii.com/i.peace/",
-  nav_projecti: "https://iii-iii.com/organization/",
-  nav_social:   "",                                   /* ★未定 */
-
-  /* --- ヒーロー（ロゴ / ENTER THE UNIVERSE） --- */
-  enter: "https://iii-iii.com/",
-
-  /* --- 中間セクション THEORY / PRAXIS --- */
-  mid_theory: "https://iii-iii.com/i-theory/",
-  mid_praxis: "https://iii-iii.com/grid/",
-
-  /* --- PICKUP カード 01〜06 --- */
-  card_theory:     "https://iii-iii.com/i-theory/",
-  card_peaceman:   "https://peace-man.space",
-  card_maaaru:     "https://maaaru.org",
-  card_iiiproject: "https://utage-system.com/p/ahvsB4JoN9vL",
-  card_vasileus:   "",                                /* ★未定 */
-  card_homodimes:  "https://iii-iii.com/homodimes",
-
-  /* --- 下部バンド（横長の帯） --- */
-  band_ipeace:   "https://iii-iii.com/i.peace/",
-  band_bigi:     "https://iii-iii.com/project/",
-  band_projecti: "https://iii-iii.com/organization/",
-  band_social:   "",                                  /* ★未定 */
-
-  /* --- フッター --- */
-  foot_home:        "https://iii-iii.com/",
-  foot_project:     "https://iii-iii.com/project/",
-  foot_theory:      "https://iii-iii.com/i-theory/",
-  foot_about:       "https://yuma-muranushi.jp/",
-  foot_media:       "https://iii-iii.com/i.media/",
-  foot_partnership: "",                               /* ★未定 */
-  foot_privacy:     "",                               /* ★未定 */
-
-  /* --- SNS --- */
-  sns_youtube:   "https://www.youtube.com/@PEACE-PEACE-PEACE-PEACE",
-  sns_x:         "",                                  /* ★未定 */
-  sns_instagram: "https://www.instagram.com/muranushing",
-  sns_facebook:  ""                                   /* ★未定 */
-};
-/* ▲▲▲ 書き換えるのはここまで ▲▲▲ */
-
+window.LINKS = window.LINKS || {};
 
 (function () {
   /* --- iframe埋め込み（WordPress等）検出：固定ヘッダー/サイドバーを埋め込み用に調整 --- */
