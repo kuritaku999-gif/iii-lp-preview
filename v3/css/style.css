@@ -99,7 +99,7 @@ img{max-width:100%;display:block}
 /* ---------- HERO ---------- */
 .hero{position:relative;background:#fff;overflow:hidden;line-height:0}
 .hero>picture img{width:100%;display:block}
-.enter-btn{position:absolute;left:3%;bottom:40%;width:min(24%,240px);z-index:3;transition:transform .25s,opacity .25s}
+.enter-btn{position:absolute;left:3%;bottom:30%;width:min(25%,250px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（大きい画像＋下にラベル／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
@@ -110,7 +110,7 @@ img{max-width:100%;display:block}
 .hero-nav a:last-child{border-right:0}
 .hero-nav a:hover{transform:translateY(-4px)}
 /* 縦長画像を切らずに全体表示（contain＋元画像と同じクリーム背景で余白を溶け込ませる） */
-.hero-nav img{width:100%;height:clamp(150px,15vw,230px);object-fit:contain;background:#ece6dc}
+.hero-nav img{width:100%;height:clamp(118px,12vw,172px);object-fit:contain;background:#ece6dc}
 .hero-nav .hn-label{display:flex;flex-direction:column;font-family:var(--serif-en);
   font-size:13px;letter-spacing:1.5px;font-weight:600}
 .hero-nav .hn-label b{font-size:11px;color:var(--sub);font-weight:600;margin-bottom:2px}
