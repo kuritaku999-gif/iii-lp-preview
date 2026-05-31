@@ -99,18 +99,18 @@ img{max-width:100%;display:block}
 /* ---------- HERO ---------- */
 .hero{position:relative;background:#fff;overflow:hidden;line-height:0}
 .hero>picture img{width:100%;display:block}
-.enter-btn{position:absolute;left:3%;bottom:24%;width:min(26%,260px);z-index:3;transition:transform .25s,opacity .25s}
+.enter-btn{position:absolute;left:3%;bottom:40%;width:min(24%,240px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（大きい画像＋下にラベル／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
   display:grid;grid-template-columns:repeat(6,1fr);
-  background:rgba(244,242,236,.86);backdrop-filter:blur(3px);border-top:1px solid var(--line)}
-.hero-nav a{display:flex;flex-direction:column;gap:9px;padding:14px 14px 16px;
+  background:rgba(236,231,221,.92);backdrop-filter:blur(3px);border-top:1px solid var(--line)}
+.hero-nav a{display:flex;flex-direction:column;gap:8px;padding:12px 10px 14px;
   border-right:1px solid var(--line);line-height:1.2;transition:transform .25s}
 .hero-nav a:last-child{border-right:0}
 .hero-nav a:hover{transform:translateY(-4px)}
-.hero-nav img{width:100%;height:clamp(86px,9vw,140px);object-fit:cover;object-position:center;
-  filter:grayscale(.1);background:#f4f2ec}
+/* 縦長画像を切らずに全体表示（contain＋元画像と同じクリーム背景で余白を溶け込ませる） */
+.hero-nav img{width:100%;height:clamp(150px,15vw,230px);object-fit:contain;background:#ece6dc}
 .hero-nav .hn-label{display:flex;flex-direction:column;font-family:var(--serif-en);
   font-size:13px;letter-spacing:1.5px;font-weight:600}
 .hero-nav .hn-label b{font-size:11px;color:var(--sub);font-weight:600;margin-bottom:2px}
