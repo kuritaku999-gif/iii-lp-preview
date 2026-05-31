@@ -1,0 +1,188 @@
+/* ===== iii-iii.com LP v3 (切り抜きパーツ再構築 / ハイブリッド) ===== */
+:root{
+  --cream:#f4f2ec;
+  --paper:#eae6da;
+  --ink:#14110d;
+  --sub:#6b6357;
+  --line:#d8d2c4;
+  --header-h:64px;
+  --sidebar-w:232px;
+  --serif-jp:"Noto Serif JP",serif;
+  --serif-en:"Cormorant Garamond","Noto Serif JP",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif-jp);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  padding-top:var(--header-h);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- HEADER (fixed) ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:100;
+  display:flex;align-items:center;gap:24px;
+  padding:0 28px;
+  background:rgba(244,242,236,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{font-family:var(--serif-en);font-size:26px;font-weight:700;letter-spacing:1px;line-height:1}
+.brand-name{font-size:9px;letter-spacing:1.5px;line-height:1.25;font-weight:600}
+.brand-name small{display:block;color:var(--sub);font-size:8px;font-weight:500}
+.header-nav{margin-left:auto;display:flex;gap:26px}
+.header-nav a{font-family:var(--serif-en);font-size:13px;letter-spacing:2px;font-weight:600;position:relative}
+.header-nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--ink);transition:width .25s}
+.header-nav a:hover::after{width:100%}
+.header-lang{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:1px;color:var(--sub)}
+.header-lang a[aria-current="true"]{color:var(--ink);font-weight:700}
+
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;width:30px;background:none;border:0;cursor:pointer;margin-left:auto}
+.hamburger span{height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.hamburger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.is-open span:nth-child(2){opacity:0}
+.hamburger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* drawer */
+.drawer-backdrop{position:fixed;inset:0;background:rgba(20,17,13,.45);opacity:0;visibility:hidden;transition:.3s;z-index:98}
+.drawer-backdrop.is-open{opacity:1;visibility:visible}
+.drawer{
+  position:fixed;top:0;right:0;height:100%;width:min(82vw,320px);z-index:99;
+  background:var(--cream);transform:translateX(100%);transition:transform .3s;
+  padding:84px 30px 40px;overflow-y:auto;border-left:1px solid var(--line);
+}
+.drawer.is-open{transform:translateX(0)}
+.drawer nav{display:flex;flex-direction:column}
+.drawer-cap{font-family:var(--serif-en);font-size:11px;letter-spacing:3px;color:var(--sub);margin:22px 0 10px}
+.drawer-cap:first-child{margin-top:0}
+.drawer a{font-family:var(--serif-en);font-size:17px;letter-spacing:1px;padding:11px 0;border-bottom:1px solid var(--line);font-weight:600}
+.drawer a b{display:inline-block;width:30px;color:var(--sub);font-size:13px}
+
+/* ---------- LAYOUT ---------- */
+.layout{display:flex;align-items:flex-start;max-width:1500px;margin:0 auto}
+
+/* sidebar (sticky / 追従) */
+.sidebar{
+  position:sticky;top:calc(var(--header-h) + 16px);
+  width:var(--sidebar-w);flex:0 0 var(--sidebar-w);
+  padding:24px 14px 24px 24px;align-self:flex-start;
+}
+.side-nav{list-style:none}
+.side-nav li{border-top:1px solid var(--line)}
+.side-nav li:last-child{border-bottom:1px solid var(--line)}
+.side-nav a{display:flex;align-items:center;gap:12px;padding:12px 4px;transition:.2s}
+.side-nav a:hover{padding-left:10px;background:linear-gradient(90deg,rgba(0,0,0,.04),transparent)}
+.side-nav img{width:38px;height:50px;object-fit:cover;flex:0 0 38px;filter:grayscale(.1)}
+.side-nav span{display:flex;flex-direction:column;font-family:var(--serif-en);font-size:14px;letter-spacing:1.5px;font-weight:600;line-height:1.25}
+.side-nav b{font-size:11px;color:var(--sub);font-weight:600}
+.side-nav small{font-family:var(--serif-jp);font-size:9.5px;letter-spacing:.5px;color:var(--sub);font-weight:500}
+
+/* main */
+.main{flex:1 1 auto;min-width:0;padding:24px 28px 60px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;border:1px solid var(--line);background:#fff;overflow:hidden}
+.hero img{width:100%}
+.enter-btn{position:absolute;left:4%;bottom:8%;width:min(34%,300px);transition:transform .25s,opacity .25s}
+.enter-btn:hover{transform:translateX(6px);opacity:.85}
+
+/* ---------- 中間セクション THEORY / PRAXIS ---------- */
+.mid{margin-top:40px;display:flex;flex-direction:column;gap:18px}
+.mid-band{position:relative;display:block;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.mid-band img{width:100%;display:block;transition:transform .6s}
+.mid-band:hover img{transform:scale(1.02)}
+.mid-text{
+  position:absolute;left:5%;top:50%;transform:translateY(-50%);
+  max-width:46%;padding:18px 22px;
+  background:linear-gradient(90deg,rgba(244,242,236,.92) 70%,rgba(244,242,236,0));
+}
+.mid-text h3{font-family:var(--serif-en);font-size:30px;letter-spacing:5px;font-weight:600;line-height:1}
+.mid-sub{font-size:12px;letter-spacing:2px;color:var(--sub);margin:4px 0 12px}
+.mid-body{font-size:13px;line-height:1.9;color:#39332a;margin-bottom:16px}
+.mid-view{font-family:var(--serif-en);font-size:12px;letter-spacing:3px;display:inline-flex;gap:10px;align-items:center}
+.mid-view i{font-style:normal;transition:transform .25s}
+.mid-band:hover .mid-view i{transform:translateX(6px)}
+
+/* 未定リンク（押しても動かない） */
+.is-disabled{cursor:default}
+
+/* ---------- SECTION HEAD ---------- */
+.sec-head{display:flex;align-items:baseline;gap:16px;margin:54px 0 26px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-family:var(--serif-en);font-size:30px;letter-spacing:4px;font-weight:600}
+.sec-sub{font-size:12px;letter-spacing:2px;color:var(--sub)}
+
+/* ---------- PICKUP CARDS (hybrid) ---------- */
+.card-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--line)}
+.card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:22px 16px 26px;background:var(--cream);
+  border-right:1px solid var(--line);transition:background .25s,transform .25s;
+  position:relative;
+}
+.card:last-child{border-right:0}
+.card:hover{background:#fff;transform:translateY(-4px);box-shadow:0 10px 30px -18px rgba(0,0,0,.4)}
+.card-no{font-family:var(--serif-en);font-size:13px;color:var(--sub);align-self:flex-start;font-weight:600}
+.card-cat{font-size:9px;letter-spacing:1.5px;color:var(--sub);margin:2px 0 4px;align-self:flex-start}
+/* アイコン部分のみを画像から切り出して表示（テキストはHTML） */
+.card-icon{
+  display:block;width:100%;height:96px;margin:10px 0 16px;
+  background-repeat:no-repeat;background-position:center center;background-size:contain;
+}
+.card-title{font-family:var(--serif-jp);font-size:18px;font-weight:600;letter-spacing:1px;margin-bottom:6px}
+.card-en{font-family:var(--serif-en);font-size:13px;letter-spacing:1px;color:#3a342b;line-height:1.4;margin-bottom:12px}
+.card-body{font-size:11.5px;color:var(--sub);line-height:1.85;margin-bottom:18px}
+.card-detail{margin-top:auto;font-family:var(--serif-en);font-size:12px;letter-spacing:3px;color:var(--ink);display:flex;gap:10px;align-items:center}
+.card-detail i{font-style:normal;transition:transform .25s}
+.card:hover .card-detail i{transform:translateX(6px)}
+
+/* ---------- BANDS ---------- */
+.bands{margin-top:46px;display:flex;flex-direction:column;gap:18px}
+.band{display:block;overflow:hidden;border:1px solid var(--line);background:#fff}
+.band img{width:100%;transition:transform .5s}
+.band:hover img{transform:scale(1.015)}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:var(--cream);border-top:1px solid var(--line);padding:36px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:26px 36px}
+.footer-nav{display:flex;flex-wrap:wrap;gap:18px 26px}
+.footer-nav a{font-family:var(--serif-en);font-size:12px;letter-spacing:1.5px;font-weight:600;text-align:center}
+.footer-nav small{display:block;font-family:var(--serif-jp);font-size:8.5px;color:var(--sub);letter-spacing:.5px;font-weight:500;margin-top:2px}
+.footer-sns{display:flex;align-items:center;gap:12px;font-family:var(--serif-en);font-size:12px;letter-spacing:2px;color:var(--sub)}
+.footer-sns a{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.2s}
+.footer-sns a:hover{background:var(--ink);color:var(--cream)}
+.copyright{margin-left:auto;font-size:10px;letter-spacing:1px;color:var(--sub)}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:1023px){
+  .header-nav,.header-lang{display:none}
+  .hamburger{display:flex}
+  .sidebar{display:none}
+  .main{padding:18px 18px 50px}
+  .card-grid{grid-template-columns:repeat(3,1fr)}
+  .card:nth-child(3){border-right:0}
+  .card:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .sec-head h2{font-size:24px}
+  .mid-text h3{font-size:24px}
+}
+@media (max-width:600px){
+  .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
+  .mid-text h3{font-size:22px}
+  .mid-band{display:flex;flex-direction:column}
+  :root{--header-h:56px}
+  .main{padding:14px 12px 40px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .card{border-right:1px solid var(--line)}
+  .card:nth-child(2n){border-right:0}
+  .card:nth-child(-n+4){border-bottom:1px solid var(--line)}
+  .card-icon{height:96px}
+  .enter-btn{width:46%;bottom:6%}
+  .sec-head{margin:38px 0 20px}
+  .footer-nav{gap:14px 18px}
+  .copyright{margin-left:0;width:100%}
+}

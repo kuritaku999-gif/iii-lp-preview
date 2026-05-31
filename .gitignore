@@ -4,3 +4,7 @@ coded/upscale.py
 coded/_*.png
 coded/_*.jpg
 coded/assets/cut/_*.jpg
+
+# v3 temp previews
+v3/_preview_*.png
+v3/_crop_*.png
