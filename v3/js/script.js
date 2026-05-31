@@ -100,6 +100,16 @@ var LINKS = {
     });
   }
 
+  /* --- サイドバー開閉（デスクトップ） --- */
+  var sidebar = document.getElementById("sidebar");
+  var sideToggle = document.getElementById("sideToggle");
+  if (sideToggle && sidebar) {
+    sideToggle.addEventListener("click", function () {
+      var closed = sidebar.classList.toggle("is-closed");
+      sideToggle.setAttribute("aria-expanded", closed ? "false" : "true");
+    });
+  }
+
   /* --- WordPress iframe 自動リサイズ（親へ高さ通知） --- */
   function postHeight() {
     if (window.parent !== window) {

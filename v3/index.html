@@ -54,23 +54,21 @@
   </nav>
 </aside>
 
-<!-- ============ LAYOUT ============ -->
-<div class="layout">
+<!-- ============ サイドバー（文字のみ・全幅の上にオーバーレイ／開閉可） ============ -->
+<aside class="sidebar" id="sidebar" aria-label="ユニバースナビ">
+  <button class="side-toggle" id="sideToggle" aria-label="ナビ開閉" aria-expanded="true"><span></span></button>
+  <ol class="side-nav">
+    <li><a data-link="nav_common"   href="https://iii-iii.com/i.media/"><b>01</b><span>COMMON</span><small>人間・メディア</small></a></li>
+    <li><a data-link="nav_theory"   href="https://iii-iii.com/i-theory/"><b>02</b><span>THEORY</span><small>理論研究</small></a></li>
+    <li><a data-link="nav_praxis"   href="https://iii-iii.com/grid/"><b>03</b><span>PRAXIS</span><small>実装・訓練</small></a></li>
+    <li><a data-link="nav_ipeace"   href="https://iii-iii.com/i.peace/"><b>04</b><span>i.PEACE</span><small>平和構想</small></a></li>
+    <li><a data-link="nav_projecti" href="https://iii-iii.com/organization/"><b>05</b><span>PROJECT i</span><small>組織構造</small></a></li>
+    <li><a data-link="nav_social"   href="#"><b>06</b><span>SOCIAL</span><small>結線</small></a></li>
+  </ol>
+</aside>
 
-  <!-- sidebar (sticky / 追従) -->
-  <aside class="sidebar" aria-label="ユニバースナビ">
-    <ol class="side-nav">
-      <li><a data-link="nav_common"   href="https://iii-iii.com/i.media/"><img src="images/nav-01-common.png" alt=""><span><b>01</b>COMMON<small>人間・メディア</small></span></a></li>
-      <li><a data-link="nav_theory"   href="https://iii-iii.com/i-theory/"><img src="images/nav-02-theory.png" alt=""><span><b>02</b>THEORY<small>理論研究</small></span></a></li>
-      <li><a data-link="nav_praxis"   href="https://iii-iii.com/grid/"><img src="images/nav-03-praxis.png" alt=""><span><b>03</b>PRAXIS<small>実装・訓練</small></span></a></li>
-      <li><a data-link="nav_ipeace"   href="https://iii-iii.com/i.peace/"><img src="images/nav-04-ipeace.png" alt=""><span><b>04</b>i.PEACE<small>平和構想</small></span></a></li>
-      <li><a data-link="nav_projecti" href="https://iii-iii.com/organization/"><img src="images/nav-05-projecti.png" alt=""><span><b>05</b>PROJECT i<small>組織構造</small></span></a></li>
-      <li><a data-link="nav_social"   href="#"><img src="images/nav-06-social.png" alt=""><span><b>06</b>SOCIAL<small>結線</small></span></a></li>
-    </ol>
-  </aside>
-
-  <!-- main -->
-  <main class="main">
+<!-- ============ MAIN（フルブリード） ============ -->
+<main class="main">
 
     <!-- HERO -->
     <section class="hero">
@@ -82,6 +80,16 @@
       <a class="enter-btn" data-link="enter" href="https://iii-iii.com/">
         <img src="images/enter-universe.png" alt="ENTER THE UNIVERSE">
       </a>
+
+      <!-- ヒーロー下部の6カラム（メインビジュアル上に乗る） -->
+      <nav class="hero-nav" aria-label="セクションナビ">
+        <a data-link="nav_common"   href="https://iii-iii.com/i.media/"><img src="images/nav-01-common.png" alt=""><span><b>01</b>COMMON</span></a>
+        <a data-link="nav_theory"   href="https://iii-iii.com/i-theory/"><img src="images/nav-02-theory.png" alt=""><span><b>02</b>THEORY</span></a>
+        <a data-link="nav_praxis"   href="https://iii-iii.com/grid/"><img src="images/nav-03-praxis.png" alt=""><span><b>03</b>PRAXIS</span></a>
+        <a data-link="nav_ipeace"   href="https://iii-iii.com/i.peace/"><img src="images/nav-04-ipeace.png" alt=""><span><b>04</b>i.PEACE</span></a>
+        <a data-link="nav_projecti" href="https://iii-iii.com/organization/"><img src="images/nav-05-projecti.png" alt=""><span><b>05</b>PROJECT&nbsp;i</span></a>
+        <a data-link="nav_social"   href="#"><img src="images/nav-06-social.png" alt=""><span><b>06</b>SOCIAL</span></a>
+      </nav>
     </section>
 
     <!-- ===== 中間セクション THEORY / PRAXIS (hybrid: 背景画像＋編集可テキスト) ===== -->
@@ -214,7 +222,6 @@
     </section>
 
   </main>
-</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">

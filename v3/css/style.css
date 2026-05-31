@@ -65,49 +65,69 @@ img{max-width:100%;display:block}
 .drawer a{font-family:var(--serif-en);font-size:17px;letter-spacing:1px;padding:11px 0;border-bottom:1px solid var(--line);font-weight:600}
 .drawer a b{display:inline-block;width:30px;color:var(--sub);font-size:13px}
 
-/* ---------- LAYOUT ---------- */
-.layout{display:flex;align-items:flex-start;width:100%}
-
-/* sidebar (sticky / 追従) ※右側に配置 */
+/* ---------- SIDEBAR（文字のみ・右端に固定オーバーレイ／開閉可） ---------- */
 .sidebar{
-  order:2;
-  position:sticky;top:calc(var(--header-h) + 16px);
-  width:var(--sidebar-w);flex:0 0 var(--sidebar-w);
-  padding:24px 24px 24px 14px;align-self:flex-start;
+  position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:90;
+  background:rgba(244,242,236,.72);backdrop-filter:blur(5px);
+  border:1px solid var(--line);border-right:0;border-radius:6px 0 0 6px;
+  padding:10px 16px 10px 14px;transition:transform .35s ease;
 }
+.sidebar.is-closed{transform:translate(100%,-50%)}
 .side-nav{list-style:none}
 .side-nav li{border-top:1px solid var(--line)}
-.side-nav li:last-child{border-bottom:1px solid var(--line)}
-.side-nav a{display:flex;align-items:center;gap:12px;padding:12px 4px;transition:.2s}
-.side-nav a:hover{padding-left:10px;background:linear-gradient(90deg,rgba(0,0,0,.04),transparent)}
-.side-nav img{width:38px;height:50px;object-fit:cover;flex:0 0 38px;filter:grayscale(.1)}
-.side-nav span{display:flex;flex-direction:column;font-family:var(--serif-en);font-size:14px;letter-spacing:1.5px;font-weight:600;line-height:1.25}
-.side-nav b{font-size:11px;color:var(--sub);font-weight:600}
-.side-nav small{font-family:var(--serif-jp);font-size:9.5px;letter-spacing:.5px;color:var(--sub);font-weight:500}
+.side-nav li:first-child{border-top:0}
+.side-nav a{display:flex;align-items:baseline;gap:9px;padding:9px 2px;transition:.2s;white-space:nowrap}
+.side-nav a:hover{transform:translateX(-4px)}
+.side-nav b{font-family:var(--serif-en);font-size:11px;color:var(--sub);font-weight:600;width:18px}
+.side-nav span{font-family:var(--serif-en);font-size:13px;letter-spacing:1.5px;font-weight:600}
+.side-nav small{font-family:var(--serif-jp);font-size:9px;letter-spacing:.3px;color:var(--sub);margin-left:auto}
+/* 開閉トグル（サイドバー左辺のタブ） */
+.side-toggle{
+  position:absolute;left:-26px;top:50%;transform:translateY(-50%);
+  width:26px;height:54px;border:1px solid var(--line);border-right:0;border-radius:6px 0 0 6px;
+  background:rgba(244,242,236,.92);cursor:pointer;display:grid;place-items:center;padding:0;
+}
+.side-toggle span,.side-toggle span::before,.side-toggle span::after{
+  content:"";display:block;width:12px;height:2px;background:var(--ink);position:relative
+}
+.side-toggle span::before{position:absolute;top:-5px}
+.side-toggle span::after{position:absolute;top:5px}
 
-/* main */
-.main{order:1;flex:1 1 auto;min-width:0;padding:24px 28px 60px}
+/* ---------- MAIN（フルブリード：余白ゼロ） ---------- */
+.main{width:100%}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;border:1px solid var(--line);background:#fff;overflow:hidden}
-.hero img{width:100%}
-.enter-btn{position:absolute;left:4%;bottom:8%;width:min(34%,300px);transition:transform .25s,opacity .25s}
+.hero{position:relative;background:#fff;overflow:hidden;line-height:0}
+.hero>picture img{width:100%;display:block}
+.enter-btn{position:absolute;left:3%;bottom:24%;width:min(26%,260px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
+/* ヒーロー下部の6カラム（MV上に重ねる） */
+.hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
+  display:grid;grid-template-columns:repeat(6,1fr);
+  background:rgba(244,242,236,.82);backdrop-filter:blur(3px);border-top:1px solid var(--line)}
+.hero-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-right:1px solid var(--line);
+  line-height:1.2;transition:background .2s}
+.hero-nav a:last-child{border-right:0}
+.hero-nav a:hover{background:rgba(255,255,255,.7)}
+.hero-nav img{width:34px;height:44px;object-fit:cover;flex:0 0 34px;filter:grayscale(.15)}
+.hero-nav span{display:flex;flex-direction:column;font-family:var(--serif-en);font-size:12px;letter-spacing:1px;font-weight:600}
+.hero-nav b{font-size:10px;color:var(--sub);font-weight:600;margin-bottom:2px}
 
-/* ---------- 中間セクション THEORY / PRAXIS ---------- */
-.mid{margin-top:40px;display:flex;flex-direction:column;gap:18px}
-.mid-band{position:relative;display:block;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+/* ---------- 中間セクション THEORY / PRAXIS（左右の横並び・隙間なし） ---------- */
+.mid{display:flex;gap:0}
+.mid-band{position:relative;display:block;overflow:hidden;background:var(--paper);flex:1 1 0;min-width:0;line-height:0}
+.mid-band+.mid-band{border-left:1px solid var(--line)}
 .mid-band img{width:100%;display:block;transition:transform .6s}
 .mid-band:hover img{transform:scale(1.02)}
 .mid-text{
-  position:absolute;left:5%;top:50%;transform:translateY(-50%);
-  max-width:46%;padding:18px 22px;
-  background:linear-gradient(90deg,rgba(244,242,236,.92) 70%,rgba(244,242,236,0));
+  position:absolute;left:6%;top:50%;transform:translateY(-50%);
+  max-width:62%;padding:14px 18px;line-height:1.7;
+  background:linear-gradient(90deg,rgba(244,242,236,.92) 68%,rgba(244,242,236,0));
 }
-.mid-text h3{font-family:var(--serif-en);font-size:30px;letter-spacing:5px;font-weight:600;line-height:1}
-.mid-sub{font-size:12px;letter-spacing:2px;color:var(--sub);margin:4px 0 12px}
-.mid-body{font-size:13px;line-height:1.9;color:#39332a;margin-bottom:16px}
-.mid-view{font-family:var(--serif-en);font-size:12px;letter-spacing:3px;display:inline-flex;gap:10px;align-items:center}
+.mid-text h3{font-family:var(--serif-en);font-size:clamp(18px,1.7vw,26px);letter-spacing:4px;font-weight:600;line-height:1}
+.mid-sub{font-size:11px;letter-spacing:2px;color:var(--sub);margin:3px 0 9px}
+.mid-body{font-size:clamp(10px,0.85vw,12.5px);line-height:1.75;color:#39332a;margin-bottom:11px}
+.mid-view{font-family:var(--serif-en);font-size:11px;letter-spacing:2px;display:inline-flex;gap:9px;align-items:center}
 .mid-view i{font-style:normal;transition:transform .25s}
 .mid-band:hover .mid-view i{transform:translateX(6px)}
 
@@ -115,12 +135,13 @@ img{max-width:100%;display:block}
 .is-disabled{cursor:default}
 
 /* ---------- SECTION HEAD ---------- */
-.sec-head{display:flex;align-items:baseline;gap:16px;margin:54px 0 26px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
-.sec-head h2{font-family:var(--serif-en);font-size:30px;letter-spacing:4px;font-weight:600}
+.pickup{padding:0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin:0;padding:30px 28px 14px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-family:var(--serif-en);font-size:28px;letter-spacing:4px;font-weight:600}
 .sec-sub{font-size:12px;letter-spacing:2px;color:var(--sub)}
 
 /* ---------- PICKUP CARDS (hybrid) ---------- */
-.card-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--line)}
+.card-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-bottom:1px solid var(--line)}
 .card{
   display:flex;flex-direction:column;align-items:center;text-align:center;
   padding:22px 16px 26px;background:var(--cream);
@@ -143,9 +164,9 @@ img{max-width:100%;display:block}
 .card-detail i{font-style:normal;transition:transform .25s}
 .card:hover .card-detail i{transform:translateX(6px)}
 
-/* ---------- BANDS (hybrid) ---------- */
-.bands{margin-top:46px;display:flex;flex-direction:column;gap:18px}
-.band{position:relative;display:block;overflow:hidden;border:1px solid var(--line);background:#fff}
+/* ---------- BANDS (hybrid・フルブリード/隙間なし) ---------- */
+.bands{margin-top:0;display:flex;flex-direction:column;gap:0}
+.band{position:relative;display:block;overflow:hidden;background:#fff;border-top:1px solid var(--line)}
 .band>img{width:100%;display:block;transition:transform .6s}
 .band:hover>img{transform:scale(1.015)}
 .band-dark{background:#0e0c0a}
@@ -173,7 +194,8 @@ img{max-width:100%;display:block}
 
 /* 横並び3枚：高さ揃え＋PROJECT i / SOCIAL は同じ幅、ï だけ細く
    （行の高さを固定し img を cover で充填。flexはインラインで grow 指定） */
-.band-row{display:flex;gap:18px;align-items:stretch;height:clamp(150px,12.5vw,205px)}
+.band-row{display:flex;gap:0;align-items:stretch;height:clamp(150px,12.5vw,205px)}
+.band-row .band-cell+.band-cell{border-left:1px solid var(--line)}
 .band-cell{min-width:0;height:100%}
 .band-cell>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 /* 横並びは高さが低いので文字を小さめに */
@@ -198,18 +220,27 @@ img{max-width:100%;display:block}
 @media (max-width:1023px){
   .header-nav,.header-lang{display:none}
   .hamburger{display:flex}
-  .sidebar{display:none}
-  .main{padding:18px 18px 50px}
+  .sidebar{display:none}            /* デスクトップ用の文字サイドバーはモバイルでは隠す（ハンバーガーに集約） */
   .card-grid{grid-template-columns:repeat(3,1fr)}
   .card:nth-child(3){border-right:0}
   .card:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .sec-head h2{font-size:24px}
-  .mid-text h3{font-size:24px}
+  /* ヒーロー6カラムは画像の下に通常配置（重ねない） */
+  .hero{display:flex;flex-direction:column}
+  .hero-nav{position:static;grid-template-columns:repeat(3,1fr);background:var(--cream)}
+  .hero-nav a:nth-child(3){border-right:0}
+  .hero-nav a:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .enter-btn{bottom:auto;top:5%}
 }
 @media (max-width:600px){
+  .mid{flex-direction:column}
+  .mid-band+.mid-band{border-left:0;border-top:1px solid var(--line)}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
   .mid-band{display:flex;flex-direction:column}
+  .hero-nav{grid-template-columns:repeat(2,1fr)}
+  .hero-nav a:nth-child(3){border-right:1px solid var(--line)}
+  .hero-nav a:nth-child(2n){border-right:0}
   /* バンド：画像の下にテキストを通常配置 */
   .band-text,.band-list{position:static;transform:none;max-width:100%;width:100%;text-align:left}
   .band-text{padding:16px 18px;background:none!important}
@@ -222,14 +253,13 @@ img{max-width:100%;display:block}
   .band-cell{flex:none!important}
   .band-row .band-text{max-width:100%}
   :root{--header-h:56px}
-  .main{padding:14px 12px 40px}
   .card-grid{grid-template-columns:repeat(2,1fr)}
   .card{border-right:1px solid var(--line)}
   .card:nth-child(2n){border-right:0}
   .card:nth-child(-n+4){border-bottom:1px solid var(--line)}
   .card-icon{height:96px}
-  .enter-btn{width:46%;bottom:6%}
-  .sec-head{margin:38px 0 20px}
+  .enter-btn{width:50%;top:4%}
+  .sec-head{padding:24px 16px 12px}
   .footer-nav{gap:14px 18px}
   .copyright{margin-left:0;width:100%}
 }
