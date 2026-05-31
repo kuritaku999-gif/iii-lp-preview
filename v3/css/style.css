@@ -142,11 +142,33 @@ img{max-width:100%;display:block}
 .card-detail i{font-style:normal;transition:transform .25s}
 .card:hover .card-detail i{transform:translateX(6px)}
 
-/* ---------- BANDS ---------- */
+/* ---------- BANDS (hybrid) ---------- */
 .bands{margin-top:46px;display:flex;flex-direction:column;gap:18px}
-.band{display:block;overflow:hidden;border:1px solid var(--line);background:#fff}
-.band img{width:100%;transition:transform .5s}
-.band:hover img{transform:scale(1.015)}
+.band{position:relative;display:block;overflow:hidden;border:1px solid var(--line);background:#fff}
+.band>img{width:100%;display:block;transition:transform .6s}
+.band:hover>img{transform:scale(1.015)}
+.band-dark{background:#0e0c0a}
+
+.band-text{position:absolute;z-index:2;max-width:44%;padding:14px 20px}
+.band-left{left:4%;top:50%;transform:translateY(-50%)}
+.band-topleft{left:4%;top:12%}
+.band-text h3{font-family:var(--serif-en);font-size:26px;letter-spacing:4px;font-weight:600;line-height:1}
+.band-sub{font-size:11px;letter-spacing:2px;margin:3px 0 9px;opacity:.8}
+.band-body{font-size:12.5px;line-height:1.8;margin-bottom:12px}
+.band-view{font-family:var(--serif-en);font-size:11px;letter-spacing:3px;display:inline-flex;gap:9px;align-items:center}
+.band-view i{font-style:normal;transition:transform .25s}
+.band:hover .band-view i{transform:translateX(6px)}
+/* 黒帯=明色文字 / クリーム=濃色文字 */
+.band-dark .band-text{color:#f4f2ec}
+.band-dark .band-text .band-sub{color:#cfc8bb}
+.band-light .band-text{color:var(--ink)}
+.band-light .band-text .band-sub{color:var(--sub)}
+.band-light .band-text{background:linear-gradient(90deg,rgba(244,242,236,.9) 72%,rgba(244,242,236,0))}
+/* i.PEACE 右側リスト */
+.band-list{position:absolute;z-index:2;right:4%;top:50%;transform:translateY(-50%);
+  list-style:none;text-align:right;color:#f4f2ec;font-family:var(--serif-en);
+  font-size:12px;letter-spacing:1.5px;line-height:2}
+.band-list li:first-child{font-weight:700}
 
 /* ---------- FOOTER ---------- */
 .site-footer{background:var(--cream);border-top:1px solid var(--line);padding:36px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:26px 36px}
@@ -174,6 +196,13 @@ img{max-width:100%;display:block}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
   .mid-band{display:flex;flex-direction:column}
+  /* バンド：画像の下にテキストを通常配置 */
+  .band-text,.band-list{position:static;transform:none;max-width:100%;width:100%;text-align:left}
+  .band-text{padding:16px 18px;background:none!important}
+  .band-topleft,.band-left{top:auto;left:auto}
+  .band-list{padding:0 18px 16px;text-align:left}
+  .band-dark{padding-bottom:2px}
+  .band-light .band-text{border-top:1px solid var(--line)}
   :root{--header-h:56px}
   .main{padding:14px 12px 40px}
   .card-grid{grid-template-columns:repeat(2,1fr)}
