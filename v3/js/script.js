@@ -60,6 +60,11 @@ var LINKS = {
 
 
 (function () {
+  /* --- iframe埋め込み（WordPress等）検出：固定ヘッダー/サイドバーを埋め込み用に調整 --- */
+  if (window.self !== window.top) {
+    document.body.classList.add("is-embedded");
+  }
+
   /* --- リンクを適用 --- */
   document.querySelectorAll("[data-link]").forEach(function (el) {
     var url = LINKS[el.getAttribute("data-link")];

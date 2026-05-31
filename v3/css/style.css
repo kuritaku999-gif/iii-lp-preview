@@ -268,3 +268,11 @@ img{max-width:100%;display:block}
   .footer-nav{gap:14px 18px}
   .copyright{margin-left:0;width:100%}
 }
+
+/* ========== WordPress等へiframe埋め込み時の調整 ==========
+   自動リサイズiframe（内部スクロール無し）ではposition:fixedが正しく効かないため、
+   ヘッダーは通常配置にして自然に流す／追従サイドバーは非表示にする
+   （ナビはヘッダー＋ヒーロー下6カラムで担保） */
+body.is-embedded{padding-top:0}
+body.is-embedded .site-header{position:static}
+body.is-embedded .sidebar{display:none}
