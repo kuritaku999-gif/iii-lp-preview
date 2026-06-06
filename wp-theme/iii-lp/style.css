@@ -250,7 +250,7 @@ img{max-width:100%;display:block}
   .mid-band+.mid-band{border-left:0;border-top:1px solid var(--line)}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
-  .mid-band{display:flex;flex-direction:column}
+  .mid-band{display:flex;flex-direction:column;flex:0 0 auto}  /* flex-basis:0+overflow:hiddenでmin-height:autoが効かず高さ0に潰れる→コンテンツ基準に戻す */
   .hero-nav{grid-template-columns:repeat(2,1fr)}
   .hero-nav a:nth-child(3){border-right:1px solid var(--line)}
   .hero-nav a:nth-child(2n){border-right:0}
