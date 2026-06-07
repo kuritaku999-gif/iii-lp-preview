@@ -44,9 +44,11 @@ var LINKS = {
   /* --- フッター --- */
   foot_home:        "https://iii-iii.com/",
   foot_project:     "https://iii-iii.com/project/",
-  foot_theory:      "https://iii-iii.com/i-theory/",
-  foot_about:       "https://yuma-muranushi.jp/",
   foot_media:       "https://iii-iii.com/i.media/",
+  foot_theory:      "https://iii-iii.com/i-theory/",
+  foot_news:        "https://iii-iii.com/i.media/",
+  foot_contact:     "https://line.me/R/ti/p/@082qgqqf",
+  foot_about:       "https://yuma-muranushi.jp/",
   foot_partnership: "",                               /* ★未定 */
   foot_privacy:     "",                               /* ★未定 */
 
