@@ -51,9 +51,11 @@ function iii_lp_link_defs() {
         // フッター / SNS
         'foot_home'        => array( 'フッター: HOME', 'footer', 'https://iii-iii.com/' ),
         'foot_project'     => array( 'フッター: PROJECT', 'footer', 'https://iii-iii.com/project/' ),
-        'foot_theory'      => array( 'フッター: THEORY', 'footer', 'https://iii-iii.com/i-theory/' ),
-        'foot_about'       => array( 'フッター: ABOUT', 'footer', 'https://yuma-muranushi.jp/' ),
         'foot_media'       => array( 'フッター: MEDIA', 'footer', 'https://iii-iii.com/i.media/' ),
+        'foot_theory'      => array( 'フッター: THEORY', 'footer', 'https://iii-iii.com/i-theory/' ),
+        'foot_news'        => array( 'フッター: NEWS', 'footer', 'https://iii-iii.com/i.media/' ),
+        'foot_contact'     => array( 'フッター: CONTACT', 'footer', 'https://line.me/R/ti/p/@082qgqqf' ),
+        'foot_about'       => array( 'フッター: ABOUT', 'footer', 'https://yuma-muranushi.jp/' ),
         'foot_partnership' => array( 'フッター: PARTNERSHIP', 'footer', '' ),
         'foot_privacy'     => array( 'フッター: PRIVACY POLICY', 'footer', '' ),
         'sns_youtube'      => array( 'SNS: YouTube', 'footer', 'https://www.youtube.com/@PEACE-PEACE-PEACE-PEACE' ),
@@ -73,11 +75,11 @@ function iii_lp_text_defs() {
         'head_pickup_sub'   => array( 'PICKUP 見出し（日）', 'head', '注目プロジェクト', 'text' ),
         // 中間 THEORY / PRAXIS
         'mid_theory_h'    => array( 'THEORY 見出し', 'mid', 'THEORY', 'text' ),
-        'mid_theory_sub'  => array( 'THEORY サブ', 'mid', '理論研究', 'text' ),
-        'mid_theory_body' => array( 'THEORY 本文', 'mid', "数学・論理・社会構造の研究。<br>互いに構造を可視化する。", 'textarea' ),
+        'mid_theory_sub'  => array( 'THEORY サブ', 'mid', '理論体系', 'text' ),
+        'mid_theory_body' => array( 'THEORY 本文', 'mid', "数学・哲学・社会理論の統合。<br>見えない構造を可視化する。", 'textarea' ),
         'mid_praxis_h'    => array( 'PRAXIS 見出し', 'mid', 'PRAXIS', 'text' ),
-        'mid_praxis_sub'  => array( 'PRAXIS サブ', 'mid', '実装・訓練', 'text' ),
-        'mid_praxis_body' => array( 'PRAXIS 本文', 'mid', "思想を実装し、現実に展開する。<br>心身を訓練して鍛える。", 'textarea' ),
+        'mid_praxis_sub'  => array( 'PRAXIS サブ', 'mid', '実装・調練・場', 'text' ),
+        'mid_praxis_body' => array( 'PRAXIS 本文', 'mid', "学習・調練・実装の接続。<br>知を行為に変換する場。", 'textarea' ),
         // PICKUP カード
         'card_theory_title'  => array( '01 タイトル', 'card', '拡張虚数理論', 'text' ),
         'card_theory_en'     => array( '01 英字', 'card', "Extended Imaginary<br>Number Theory", 'textarea' ),
@@ -87,7 +89,7 @@ function iii_lp_text_defs() {
         'card_peaceman_body' => array( '02 本文', 'card', "世界平和を実装する<br>リアルヒーロー<br>プロジェクト。", 'textarea' ),
         'card_maaaru_title'  => array( '03 タイトル', 'card', 'maaaru', 'text' ),
         'card_maaaru_en'     => array( '03 英字', 'card', "60 Countries<br>Educational Support", 'textarea' ),
-        'card_maaaru_body'   => array( '03 本文', 'card', "教育支援を軸とした<br>支援国や和活動へ、<br>60か国支援を目指す。", 'textarea' ),
+        'card_maaaru_body'   => array( '03 本文', 'card', "教育支援を軸とした<br>実践的平和活動。<br>60か国支援を目指す。", 'textarea' ),
         'card_iiiproject_title'=> array( '04 タイトル', 'card', 'iii Project', 'text' ),
         'card_iiiproject_en' => array( '04 英字', 'card', 'Education × Peace', 'textarea' ),
         'card_iiiproject_body'=> array( '04 本文', 'card', "教育と平和を融合した<br>次世代教育プラット<br>フォーム。", 'textarea' ),
@@ -103,9 +105,9 @@ function iii_lp_text_defs() {
         'band_ipeace_body' => array( 'i.PEACE 本文', 'band', "世界平和のための構想・ヒーロー・<br>教育支援の統合プラットフォーム。", 'textarea' ),
         'band_projecti_h'    => array( 'PROJECT i 見出し', 'band', 'PROJECT i', 'text' ),
         'band_projecti_sub'  => array( 'PROJECT i サブ', 'band', '組織構造', 'text' ),
-        'band_projecti_body' => array( 'PROJECT i 本文', 'band', "法人・団体・コミュニティなど<br>プロジェクトの創造体。", 'textarea' ),
+        'band_projecti_body' => array( 'PROJECT i 本文', 'band', "法人・団体・コミュニティなど<br>プロジェクトの仕組み。", 'textarea' ),
         'band_social_h'    => array( 'SOCIAL 見出し', 'band', 'SOCIAL', 'text' ),
-        'band_social_sub'  => array( 'SOCIAL サブ', 'band', '結線先', 'text' ),
+        'band_social_sub'  => array( 'SOCIAL サブ', 'band', '接続先', 'text' ),
         'band_social_body' => array( 'SOCIAL 本文', 'band', "外部メディア・SNS・<br>パートナーシップなど<br>社会との接点。", 'textarea' ),
     );
 }
@@ -129,8 +131,8 @@ function iii_t( $id ) {
  * ========================================================= */
 function iii_lp_assets() {
     wp_enqueue_style( 'iii-lp-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), null );
-    wp_enqueue_style( 'iii-lp-style', get_stylesheet_uri(), array(), '1.1' );
-    wp_enqueue_script( 'iii-lp-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.1', true );
+    wp_enqueue_style( 'iii-lp-style', get_stylesheet_uri(), array(), '1.2' );
+    wp_enqueue_script( 'iii-lp-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.2', true );
 
     // カスタマイザーのリンク値を JS の LINKS として注入（script.js より前に出力）
     $links = array();

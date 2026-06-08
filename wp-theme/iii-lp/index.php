@@ -4,7 +4,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="思想、理論、実装、平和構想。すべては Z = D + iD から展開する。YUMA MURANUSHI PROJECT UNIVERSE">
+<meta name="description" content="思想、理論、実装、平和構想、すべては Z = D + iD から展開する。YUMA MURANUSHI PROJECT UNIVERSE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <?php wp_head(); ?>
@@ -57,12 +57,12 @@
 <aside class="sidebar" id="sidebar" aria-label="ユニバースナビ">
   <button class="side-toggle" id="sideToggle" aria-label="ナビ開閉" aria-expanded="true"><span></span></button>
   <ol class="side-nav">
-    <li><a data-link="nav_common"   href="#"><b>01</b><span>COMMON</span><small>人間・メディア</small></a></li>
-    <li><a data-link="nav_theory"   href="#"><b>02</b><span>THEORY</span><small>理論研究</small></a></li>
-    <li><a data-link="nav_praxis"   href="#"><b>03</b><span>PRAXIS</span><small>実装・訓練</small></a></li>
+    <li><a data-link="nav_common"   href="#"><b>01</b><span>COMMON</span><small>入口・人間・メディア</small></a></li>
+    <li><a data-link="nav_theory"   href="#"><b>02</b><span>THEORY</span><small>理論体系</small></a></li>
+    <li><a data-link="nav_praxis"   href="#"><b>03</b><span>PRAXIS</span><small>実装・調練・場</small></a></li>
     <li><a data-link="nav_ipeace"   href="#"><b>04</b><span>i.PEACE</span><small>平和構想</small></a></li>
     <li><a data-link="nav_projecti" href="#"><b>05</b><span>PROJECT i</span><small>組織構造</small></a></li>
-    <li><a data-link="nav_social"   href="#"><b>06</b><span>SOCIAL</span><small>結線</small></a></li>
+    <li><a data-link="nav_social"   href="#"><b>06</b><span>SOCIAL</span><small>接続先</small></a></li>
   </ol>
 </aside>
 
@@ -82,12 +82,12 @@
 
       <!-- ヒーロー下部の6カラム -->
       <nav class="hero-nav" aria-label="セクションナビ">
-        <a data-link="nav_common"   href="#"><img src="<?php echo $img; ?>/nav-01-common.jpg" alt=""><span class="hn-label"><b>01</b>COMMON<small>人間・メディア</small></span></a>
-        <a data-link="nav_theory"   href="#"><img src="<?php echo $img; ?>/nav-02-theory.jpg" alt=""><span class="hn-label"><b>02</b>THEORY<small>理論研究</small></span></a>
-        <a data-link="nav_praxis"   href="#"><img src="<?php echo $img; ?>/nav-03-praxis.jpg" alt=""><span class="hn-label"><b>03</b>PRAXIS<small>実装・訓練</small></span></a>
+        <a data-link="nav_common"   href="#"><img src="<?php echo $img; ?>/nav-01-common.jpg" alt=""><span class="hn-label"><b>01</b>COMMON<small>入口・人間・メディア</small></span></a>
+        <a data-link="nav_theory"   href="#"><img src="<?php echo $img; ?>/nav-02-theory.jpg" alt=""><span class="hn-label"><b>02</b>THEORY<small>理論体系</small></span></a>
+        <a data-link="nav_praxis"   href="#"><img src="<?php echo $img; ?>/nav-03-praxis.jpg" alt=""><span class="hn-label"><b>03</b>PRAXIS<small>実装・調練・場</small></span></a>
         <a data-link="nav_ipeace"   href="#"><img src="<?php echo $img; ?>/nav-04-ipeace.jpg" alt=""><span class="hn-label"><b>04</b>i.PEACE<small>平和構想</small></span></a>
         <a data-link="nav_projecti" href="#"><img src="<?php echo $img; ?>/nav-05-projecti.jpg" alt=""><span class="hn-label"><b>05</b>PROJECT i<small>組織構造</small></span></a>
-        <a data-link="nav_social"   href="#"><img src="<?php echo $img; ?>/nav-06-social.jpg" alt=""><span class="hn-label"><b>06</b>SOCIAL<small>結線</small></span></a>
+        <a data-link="nav_social"   href="#"><img src="<?php echo $img; ?>/nav-06-social.jpg" alt=""><span class="hn-label"><b>06</b>SOCIAL<small>接続先</small></span></a>
       </nav>
     </section>
 
@@ -231,9 +231,11 @@
   <nav class="footer-nav">
     <a data-link="foot_home"        href="#">HOME<small>ホーム</small></a>
     <a data-link="foot_project"     href="#">PROJECT<small>プロジェクト</small></a>
-    <a data-link="foot_theory"      href="#">THEORY<small>理論</small></a>
-    <a data-link="foot_about"       href="#">ABOUT<small>私について</small></a>
     <a data-link="foot_media"       href="#">MEDIA<small>メディア</small></a>
+    <a data-link="foot_theory"      href="#">THEORY<small>理論</small></a>
+    <a data-link="foot_news"        href="#">NEWS<small>ニュース</small></a>
+    <a data-link="foot_contact"     href="#">CONTACT<small>お問い合わせ</small></a>
+    <a data-link="foot_about"       href="#">ABOUT<small>私について</small></a>
     <a data-link="foot_partnership" href="#">PARTNERSHIP<small>パートナーシップ</small></a>
     <a data-link="foot_privacy"     href="#">PRIVACY POLICY<small>プライバシーポリシー</small></a>
   </nav>
@@ -245,6 +247,7 @@
     <a data-link="sns_facebook"  href="#" aria-label="Facebook">f</a>
   </div>
   <p class="copyright">© 2025 Yuma Muranushi All Rights Reserved.</p>
+  <p class="footer-tagline">FROM D TO iD.<br>FROM INDIVIDUAL TO UNIVERSE.<br>FROM KNOWLEDGE TO PEACE.</p>
 </footer>
 
 <?php wp_footer(); ?>
