@@ -103,10 +103,10 @@ img{max-width:100%;display:block}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
-  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
-  padding:0 5.5% 12px;background:transparent;border-top:0}
+  display:flex;justify-content:center;align-items:flex-end;gap:1.4%;
+  padding:0 0 12px;background:transparent;border-top:0}
 .hero-nav a{display:flex;flex-direction:column;padding:0;
-  width:75%;justify-self:center;
+  flex:0 0 10.6%;
   background:rgba(236,231,221,.95);border:1px solid var(--line);
   line-height:1.2;transition:transform .25s,box-shadow .25s}
 .hero-nav a:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
