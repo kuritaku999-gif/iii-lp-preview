@@ -113,9 +113,9 @@ img{max-width:100%;display:block}
 /* 縦長セルに全体表示（contain＝切れない／元画像と同じクリームで余白を馴染ませる） */
 .hero-nav img{width:100%;height:clamp(160px,16vw,214px);object-fit:contain;display:block;background:#ece6dc}
 .hero-nav .hn-label{display:flex;flex-direction:column;padding:9px 10px 13px;
-  font-family:var(--serif-en);font-size:13px;letter-spacing:1.5px;font-weight:600}
-.hero-nav .hn-label b{font-size:11px;color:var(--sub);font-weight:600;margin-bottom:2px}
-.hero-nav .hn-label small{font-family:var(--serif-jp);font-size:9px;letter-spacing:.3px;color:var(--sub);font-weight:500;margin-top:3px}
+  font-family:var(--serif-en);font-size:13px;letter-spacing:1.5px;font-weight:700;color:var(--ink)}
+.hero-nav .hn-label b{font-size:11px;color:var(--ink);font-weight:700;margin-bottom:2px}
+.hero-nav .hn-label small{font-family:var(--serif-jp);font-size:9.5px;letter-spacing:.3px;color:#2b2620;font-weight:600;margin-top:3px}
 
 /* ---------- 中間セクション THEORY / PRAXIS（左右の横並び・隙間なし） ---------- */
 .mid{display:flex;gap:0}
