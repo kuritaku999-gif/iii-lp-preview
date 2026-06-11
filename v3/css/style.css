@@ -103,7 +103,7 @@ img{max-width:100%;display:block}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
-  display:flex;justify-content:center;align-items:flex-end;gap:1.4%;
+  display:flex;justify-content:center;align-items:stretch;gap:1.4%;
   padding:0 0 12px;background:transparent;border-top:0}
 .hero-nav a{display:flex;flex-direction:column;padding:0;
   flex:0 0 10.6%;
