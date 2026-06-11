@@ -232,6 +232,7 @@ img{max-width:100%;display:block}
   .sec-head h2{font-size:24px}
   /* ヒーロー6カラムはタブレットでも画像の上に重ねる（PCと同様） */
   .hero-nav a{flex:0 0 13.5%}
+  .hero-nav img{height:clamp(80px,15vw,150px)}   /* PC用の最小160pxを使わず幅に比例＝601px超で縦長に伸びるのを防ぐ */
   .enter-btn{bottom:auto;top:5%}
 }
 @media (max-width:600px){
