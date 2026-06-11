@@ -237,7 +237,8 @@ img{max-width:100%;display:block}
   /* ヒーロー6カラムはタブレットでも画像の上に重ねる（PCと同様） */
   .hero-nav a{flex:0 0 13.5%}
   .hero-nav img{height:clamp(80px,15vw,150px)}   /* PC用の最小160pxを使わず幅に比例＝601px超で縦長に伸びるのを防ぐ */
-  .enter-btn{bottom:auto;top:5%}
+  /* タブレットはヒーローが低くカードが高いので、焼込ロゴの下・Z=D+iDの上の余白に配置（下部は隙間が無く焼込文字と被るため） */
+  .enter-btn{left:6%;top:15%;bottom:auto;width:min(20%,180px)}
 }
 @media (max-width:600px){
   .mid{flex-direction:column}
