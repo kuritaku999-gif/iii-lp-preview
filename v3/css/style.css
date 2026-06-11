@@ -99,7 +99,7 @@ img{max-width:100%;display:block}
 /* ---------- HERO ---------- */
 .hero{position:relative;background:#fff;overflow:hidden;line-height:0}
 .hero>picture img{width:100%;display:block}
-.enter-btn{position:absolute;left:3%;bottom:34%;width:min(23%,230px);z-index:3;transition:transform .25s,opacity .25s}
+.enter-btn{position:absolute;left:2.5%;bottom:41%;width:min(16%,200px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
@@ -222,6 +222,10 @@ img{max-width:100%;display:block}
 .footer-tagline{width:100%;text-align:right;font-family:var(--serif-en);font-size:10px;font-weight:600;letter-spacing:1.5px;line-height:1.9;color:var(--sub);margin:-8px 0 0}
 
 /* ========== RESPONSIVE ========== */
+/* 狭いPC：カードが高くなり説明文との隙間が狭まるため、ENTERボタンを少し上げてカードと重ならないようにする */
+@media (min-width:1024px) and (max-width:1199px){
+  .enter-btn{bottom:48%}
+}
 @media (max-width:1023px){
   .header-nav,.header-lang{display:none}
   .hamburger{display:flex}
