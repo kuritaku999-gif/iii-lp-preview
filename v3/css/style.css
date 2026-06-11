@@ -104,7 +104,7 @@ img{max-width:100%;display:block}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
 .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
   display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
-  padding:0 12px 12px;background:transparent;border-top:0}
+  padding:0 5.5% 12px;background:transparent;border-top:0}
 .hero-nav a{display:flex;flex-direction:column;padding:0;
   width:75%;justify-self:center;
   background:rgba(236,231,221,.95);border:1px solid var(--line);
