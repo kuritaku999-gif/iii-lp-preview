@@ -236,7 +236,7 @@ img{max-width:100%;display:block}
   .sec-head h2{font-size:24px}
   /* ヒーロー6カラムはタブレットでも画像の上に重ねる（PCと同様） */
   .hero-nav a{flex:0 0 13.5%}
-  .hero-nav img{height:clamp(44px,7.5vw,88px)}   /* タブレットはカードを低めにして説明文の下にENTERボタンの隙間を作る */
+  .hero-nav img{height:clamp(80px,12.5vw,140px)}   /* coverでfig上下が切れないよう箱を高めに（低すぎると縦長3:4画像の上下が大きくトリミングされる）。ENTERボタン(bottom:38%)とは非衝突を各幅で検証済 */
   /* ENTERボタンは説明文の下・カードの上に配置（PCと同じ位置感／焼込文字とカードの両方を避ける） */
   .enter-btn{left:6%;bottom:38%;top:auto;width:min(20%,180px)}
 }
