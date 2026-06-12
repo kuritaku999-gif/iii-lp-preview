@@ -98,7 +98,8 @@ img{max-width:100%;display:block}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;background:#fff;overflow:hidden;line-height:0}
-.hero>picture img{width:100%;display:block}
+.hero-media{position:relative;line-height:0}   /* 画像＋ENTERボタンの基準枠。カードを下に出してもボタンは常に画像基準 */
+.hero-media picture img{width:100%;display:block}
 .enter-btn{position:absolute;left:6%;bottom:41%;width:min(16%,200px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
@@ -234,15 +235,15 @@ img{max-width:100%;display:block}
   .card:nth-child(3){border-right:0}
   .card:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .sec-head h2{font-size:24px}
-  /* ヒーロー6カラムはタブレットでも画像の上に重ねる（PCと同様） */
-  .hero-nav a{flex:0 0 13.5%}
-  .hero-nav img{height:clamp(80px,12.5vw,140px)}   /* coverでfig上下が切れないよう箱を高めに（低すぎると縦長3:4画像の上下が大きくトリミングされる）。ENTERボタン(bottom:38%)とは非衝突を各幅で検証済 */
-  /* ENTERボタンは説明文の下・カードの上に配置（PCと同じ位置感／焼込文字とカードの両方を避ける） */
-  .enter-btn{left:6%;bottom:38%;top:auto;width:min(20%,180px)}
-}
-/* 最狭タブレット：ヒーローが特に低くカードが高いので、副題を隠してカードを縮めENTERボタンの隙間を確保 */
-@media (min-width:601px) and (max-width:740px){
-  .hero-nav .hn-label small{display:none}
+  /* タブレットでは6カラムをヒーロー画像の「下」に独立した帯として配置。
+     オーバーレイをやめることでfigの切れ・ENTERボタン被りを構造的に解消（帯なので高さに余裕→figフル表示） */
+  .hero-nav{position:static;left:auto;right:auto;bottom:auto;z-index:auto;
+    display:grid;grid-template-columns:repeat(6,1fr);gap:1.2%;
+    padding:12px 2% 16px;background:var(--cream);border-top:1px solid var(--line)}
+  .hero-nav a{flex:initial}
+  .hero-nav img{height:clamp(150px,21vw,220px)}   /* 下の帯なのでfigがフルで収まる高さ */
+  /* ENTERボタンはカードが画像から退いたので、画像下部に自然配置（説明文の下・空きスペース） */
+  .enter-btn{left:6%;bottom:12%;top:auto;width:min(22%,190px)}
 }
 @media (max-width:600px){
   .mid{flex-direction:column}
@@ -250,15 +251,15 @@ img{max-width:100%;display:block}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
   .mid-band{display:flex;flex-direction:column;flex:0 0 auto}  /* flex-basis:0+overflow:hiddenでmin-height:autoが効かず高さ0に潰れる→コンテンツ基準に戻す */
-  /* スマホもヒーロー画像の上に6カラムを重ねる（縦長MVの下部に乗せる） */
-  .hero-nav{display:grid;grid-template-columns:repeat(6,1fr);
-    gap:1.2%;padding:0 1.5% 6px;align-items:end}        /* gridで6等分＝確実に6枚収まる */
+  /* スマホは6カラムをヒーロー画像の「下」に3列×2段で配置（figフル表示・副題も表示） */
+  .hero-nav{grid-template-columns:repeat(3,1fr);
+    gap:7px;padding:12px 4% 16px;align-items:stretch}
   .hero-nav a{flex:initial;width:auto;min-width:0}
-  .hero-nav img{height:clamp(52px,15vw,104px)}          /* モバイルは画像を低く */
-  .hero-nav .hn-label{padding:4px 2px 6px;font-size:8px;letter-spacing:.2px}
-  .hero-nav .hn-label b{font-size:7px;margin-bottom:1px}
-  .hero-nav .hn-label small{display:none}             /* 副題は幅不足のため非表示 */
-  .enter-btn{bottom:auto;top:4%;width:46%}
+  .hero-nav img{height:clamp(150px,42vw,230px)}
+  .hero-nav .hn-label{padding:7px 7px 9px;font-size:11px;letter-spacing:.5px}
+  .hero-nav .hn-label b{font-size:9px;margin-bottom:2px}
+  .hero-nav .hn-label small{display:block;font-size:8.5px;margin-top:2px}  /* 下に置くので副題を表示 */
+  .enter-btn{left:6%;bottom:8%;top:auto;width:42%}
   /* バンド：画像の下にテキストを通常配置 */
   .band-text,.band-list{position:static;transform:none;max-width:100%;width:100%;text-align:left}
   .band-text{padding:16px 18px;background:none!important}
@@ -278,7 +279,6 @@ img{max-width:100%;display:block}
   .card:nth-child(2n){border-right:0}
   .card:nth-child(-n+4){border-bottom:1px solid var(--line)}
   .card-icon{height:96px}
-  .enter-btn{width:50%;top:4%}
   .sec-head{padding:24px 16px 12px}
   .footer-nav{gap:14px 18px}
   .copyright{margin-left:0;width:100%}
