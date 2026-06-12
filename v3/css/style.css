@@ -235,15 +235,12 @@ img{max-width:100%;display:block}
   .card:nth-child(3){border-right:0}
   .card:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .sec-head h2{font-size:24px}
-  /* タブレットでは6カラムをヒーロー画像の「下」に独立した帯として配置。
-     オーバーレイをやめることでfigの切れ・ENTERボタン被りを構造的に解消（帯なので高さに余裕→figフル表示） */
-  .hero-nav{position:static;left:auto;right:auto;bottom:auto;z-index:auto;
-    display:grid;grid-template-columns:repeat(6,1fr);gap:1.2%;
-    padding:12px 2% 16px;background:var(--cream);border-top:1px solid var(--line)}
-  .hero-nav a{flex:initial}
-  .hero-nav img{height:clamp(150px,21vw,220px)}   /* 下の帯なのでfigがフルで収まる高さ */
-  /* ENTERボタンはカードが画像から退いたので、画像下部に自然配置（説明文の下・空きスペース） */
-  .enter-btn{left:6%;bottom:12%;top:auto;width:min(22%,190px)}
+  /* タブレットも6カラムはヒーロー画像の上にオーバーレイ（PC/スマホと同じ配置を維持）。
+     箱が低いとcoverでfigの上下が切れるため、タブレットだけcontainでfig全体を表示し切れを防ぐ */
+  .hero-nav a{flex:0 0 13.5%}
+  .hero-nav img{height:clamp(64px,9.5vw,120px);object-fit:contain;background:#ece6dc}  /* containなのでfigは絶対に切れない。箱はENTERボタンと衝突しない高さに抑える */
+  /* ENTERボタンは説明文の下・カードの上（カードと非衝突になるよう少し上げてbottom:44%） */
+  .enter-btn{left:6%;bottom:44%;top:auto;width:min(20%,180px)}
 }
 @media (max-width:600px){
   .mid{flex-direction:column}
