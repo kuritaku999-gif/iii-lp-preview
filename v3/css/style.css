@@ -251,15 +251,17 @@ img{max-width:100%;display:block}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
   .mid-band{display:flex;flex-direction:column;flex:0 0 auto}  /* flex-basis:0+overflow:hiddenでmin-height:autoが効かず高さ0に潰れる→コンテンツ基準に戻す */
-  /* スマホは6カラムをヒーロー画像の「下」に3列×2段で配置（figフル表示・副題も表示） */
-  .hero-nav{grid-template-columns:repeat(3,1fr);
-    gap:7px;padding:12px 4% 16px;align-items:stretch}
+  /* スマホはヒーロー画像の上に6カラムを重ねる（縦長MVの下部に乗せる）
+     ※タブレットのstatic帯ルールを打ち消してオーバーレイ（position:absolute）に戻す */
+  .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
+    display:grid;grid-template-columns:repeat(6,1fr);
+    gap:1.2%;padding:0 1.5% 6px;align-items:end;background:transparent;border-top:0}  /* gridで6等分＝確実に6枚収まる */
   .hero-nav a{flex:initial;width:auto;min-width:0}
-  .hero-nav img{height:clamp(150px,42vw,230px)}
-  .hero-nav .hn-label{padding:7px 7px 9px;font-size:11px;letter-spacing:.5px}
-  .hero-nav .hn-label b{font-size:9px;margin-bottom:2px}
-  .hero-nav .hn-label small{display:block;font-size:8.5px;margin-top:2px}  /* 下に置くので副題を表示 */
-  .enter-btn{left:6%;bottom:8%;top:auto;width:42%}
+  .hero-nav img{height:clamp(52px,15vw,104px)}          /* モバイルは画像を低く */
+  .hero-nav .hn-label{padding:4px 2px 6px;font-size:8px;letter-spacing:.2px}
+  .hero-nav .hn-label b{font-size:7px;margin-bottom:1px}
+  .hero-nav .hn-label small{display:none}             /* 副題は幅不足のため非表示 */
+  .enter-btn{left:6%;bottom:auto;top:4%;width:50%}
   /* バンド：画像の下にテキストを通常配置 */
   .band-text,.band-list{position:static;transform:none;max-width:100%;width:100%;text-align:left}
   .band-text{padding:16px 18px;background:none!important}
