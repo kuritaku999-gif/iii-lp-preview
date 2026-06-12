@@ -108,7 +108,8 @@ img{max-width:100%;display:block}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;background:#fff;overflow:hidden;line-height:0}
-.hero>picture img{width:100%;display:block}
+.hero-media{position:relative;line-height:0}   /* 画像＋ENTERボタンの基準枠。カードを下に出してもボタンは常に画像基準 */
+.hero-media picture img{width:100%;display:block}
 .enter-btn{position:absolute;left:6%;bottom:41%;width:min(16%,200px);z-index:3;transition:transform .25s,opacity .25s}
 .enter-btn:hover{transform:translateX(6px);opacity:.85}
 /* ヒーロー下部の6カラム（元のクリーム背景のまま／MV上に重ねる） */
@@ -120,8 +121,8 @@ img{max-width:100%;display:block}
   background:rgba(236,231,221,.95);border:1px solid var(--line);
   line-height:1.2;transition:transform .25s,box-shadow .25s}
 .hero-nav a:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
-/* 縦長セルに全体表示（contain＝切れない／元画像と同じクリームで余白を馴染ませる） */
-.hero-nav img{width:100%;height:clamp(160px,16vw,214px);object-fit:contain;display:block;background:#ece6dc}
+/* 縦長セルにカードいっぱい表示（cover＝余白を出さずカードを埋める。画像3:4とカード比がほぼ同じでトリミングは僅か） */
+.hero-nav img{width:100%;height:clamp(160px,16vw,214px);object-fit:cover;display:block;background:#ece6dc}
 .hero-nav .hn-label{display:flex;flex-direction:column;padding:9px 10px 13px;
   font-family:var(--serif-en);font-size:13px;letter-spacing:1.5px;font-weight:700;color:var(--ink)}
 .hero-nav .hn-label b{font-size:11px;color:var(--ink);font-weight:700;margin-bottom:2px}
@@ -244,15 +245,12 @@ img{max-width:100%;display:block}
   .card:nth-child(3){border-right:0}
   .card:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .sec-head h2{font-size:24px}
-  /* ヒーロー6カラムはタブレットでも画像の上に重ねる（PCと同様） */
+  /* タブレットも6カラムはヒーロー画像の上にオーバーレイ（PC/スマホと同じ配置を維持）。
+     箱が低いとcoverでfigの上下が切れるため、タブレットだけcontainでfig全体を表示し切れを防ぐ */
   .hero-nav a{flex:0 0 13.5%}
-  .hero-nav img{height:clamp(44px,7.5vw,88px)}   /* タブレットはカードを低めにして説明文の下にENTERボタンの隙間を作る */
-  /* ENTERボタンは説明文の下・カードの上に配置（PCと同じ位置感／焼込文字とカードの両方を避ける） */
-  .enter-btn{left:6%;bottom:38%;top:auto;width:min(20%,180px)}
-}
-/* 最狭タブレット：ヒーローが特に低くカードが高いので、副題を隠してカードを縮めENTERボタンの隙間を確保 */
-@media (min-width:601px) and (max-width:740px){
-  .hero-nav .hn-label small{display:none}
+  .hero-nav img{height:clamp(64px,9.5vw,120px);object-fit:contain;background:#ece6dc}  /* containなのでfigは絶対に切れない。箱はENTERボタンと衝突しない高さに抑える */
+  /* ENTERボタンは説明文の下・カードの上（カードと非衝突になるよう少し上げてbottom:44%） */
+  .enter-btn{left:6%;bottom:44%;top:auto;width:min(20%,180px)}
 }
 @media (max-width:600px){
   .mid{flex-direction:column}
@@ -260,15 +258,17 @@ img{max-width:100%;display:block}
   .mid-text{position:static;transform:none;max-width:100%;background:var(--cream);border-top:1px solid var(--line)}
   .mid-text h3{font-size:22px}
   .mid-band{display:flex;flex-direction:column;flex:0 0 auto}  /* flex-basis:0+overflow:hiddenでmin-height:autoが効かず高さ0に潰れる→コンテンツ基準に戻す */
-  /* スマホもヒーロー画像の上に6カラムを重ねる（縦長MVの下部に乗せる） */
-  .hero-nav{display:grid;grid-template-columns:repeat(6,1fr);
-    gap:1.2%;padding:0 1.5% 6px;align-items:end}        /* gridで6等分＝確実に6枚収まる */
+  /* スマホはヒーロー画像の上に6カラムを重ねる（縦長MVの下部に乗せる）
+     ※タブレットのstatic帯ルールを打ち消してオーバーレイ（position:absolute）に戻す */
+  .hero-nav{position:absolute;left:0;right:0;bottom:0;z-index:2;
+    display:grid;grid-template-columns:repeat(6,1fr);
+    gap:1.2%;padding:0 1.5% 6px;align-items:end;background:transparent;border-top:0}  /* gridで6等分＝確実に6枚収まる */
   .hero-nav a{flex:initial;width:auto;min-width:0}
   .hero-nav img{height:clamp(52px,15vw,104px)}          /* モバイルは画像を低く */
   .hero-nav .hn-label{padding:4px 2px 6px;font-size:8px;letter-spacing:.2px}
   .hero-nav .hn-label b{font-size:7px;margin-bottom:1px}
   .hero-nav .hn-label small{display:none}             /* 副題は幅不足のため非表示 */
-  .enter-btn{bottom:auto;top:4%;width:46%}
+  .enter-btn{left:6%;bottom:auto;top:4%;width:50%}
   /* バンド：画像の下にテキストを通常配置 */
   .band-text,.band-list{position:static;transform:none;max-width:100%;width:100%;text-align:left}
   .band-text{padding:16px 18px;background:none!important}
@@ -288,7 +288,6 @@ img{max-width:100%;display:block}
   .card:nth-child(2n){border-right:0}
   .card:nth-child(-n+4){border-bottom:1px solid var(--line)}
   .card-icon{height:96px}
-  .enter-btn{width:50%;top:4%}
   .sec-head{padding:24px 16px 12px}
   .footer-nav{gap:14px 18px}
   .copyright{margin-left:0;width:100%}

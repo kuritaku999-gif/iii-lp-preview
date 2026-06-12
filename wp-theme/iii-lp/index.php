@@ -71,6 +71,7 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-media">
       <picture>
         <source media="(max-width:600px)"  srcset="<?php echo $img; ?>/mv-sp.jpg">
         <source media="(max-width:1023px)" srcset="<?php echo $img; ?>/mv-tablet.jpg">
@@ -79,6 +80,7 @@
       <a class="enter-btn" data-link="enter" href="#">
         <img src="<?php echo $img; ?>/enter-universe.png" alt="ENTER THE UNIVERSE">
       </a>
+      </div>
 
       <!-- ヒーロー下部の6カラム -->
       <nav class="hero-nav" aria-label="セクションナビ">

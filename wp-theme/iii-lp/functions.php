@@ -131,8 +131,8 @@ function iii_t( $id ) {
  * ========================================================= */
 function iii_lp_assets() {
     wp_enqueue_style( 'iii-lp-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), null );
-    wp_enqueue_style( 'iii-lp-style', get_stylesheet_uri(), array(), '1.3' );
-    wp_enqueue_script( 'iii-lp-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.3', true );
+    wp_enqueue_style( 'iii-lp-style', get_stylesheet_uri(), array(), '1.4' );
+    wp_enqueue_script( 'iii-lp-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.4', true );
 
     // カスタマイザーのリンク値を JS の LINKS として注入（script.js より前に出力）
     $links = array();
