@@ -110,8 +110,8 @@ img{max-width:100%;display:block}
   background:rgba(236,231,221,.95);border:1px solid var(--line);
   line-height:1.2;transition:transform .25s,box-shadow .25s}
 .hero-nav a:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
-/* 縦長セルに全体表示（contain＝切れない／元画像と同じクリームで余白を馴染ませる） */
-.hero-nav img{width:100%;height:clamp(160px,16vw,214px);object-fit:contain;display:block;background:#ece6dc}
+/* 縦長セルにカードいっぱい表示（cover＝余白を出さずカードを埋める。画像3:4とカード比がほぼ同じでトリミングは僅か） */
+.hero-nav img{width:100%;height:clamp(160px,16vw,214px);object-fit:cover;display:block;background:#ece6dc}
 .hero-nav .hn-label{display:flex;flex-direction:column;padding:9px 10px 13px;
   font-family:var(--serif-en);font-size:13px;letter-spacing:1.5px;font-weight:700;color:var(--ink)}
 .hero-nav .hn-label b{font-size:11px;color:var(--ink);font-weight:700;margin-bottom:2px}
